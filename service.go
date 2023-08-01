@@ -1,6 +1,6 @@
 package service
 
-import "github.com/bytedance/sonic"
+import "encoding/json"
 
 type Service struct {
 	Name        string `json:"name"`
@@ -14,6 +14,6 @@ type Service struct {
 }
 
 func (s *Service) Byte() []byte {
-	chunk, _ := sonic.Marshal(s)
+	chunk, _ := json.Marshal(s)
 	return chunk
 }
